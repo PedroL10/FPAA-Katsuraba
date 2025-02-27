@@ -14,7 +14,7 @@ O algoritmo de Karatsuba eh um metodo eficiente para multiplicacao de numeros gr
 2. Baixe o arquivo contendo o codigo `karatsuba.py`.
 3. Execute o script Python com o seguinte comando:
    ```sh
-   python karatsuba.py
+   python main.py
    ```
 4. O programa ira imprimir os resultados das multiplicacoes realizadas pelo algoritmo de Karatsuba e a comparacao com a multiplicacao convencional.
 
