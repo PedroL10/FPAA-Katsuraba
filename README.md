@@ -69,9 +69,8 @@ O grafo de fluxo é estruturado da seguinte forma:
 
 ### Cálculo de complexidade
 Utilizando a fórmula:
-\[
-\text{M} = E - N + 2P
-\]
+M= E - N + 2P
+
 Onde:
 - **E** é o número de arestas no grafo.
 - **N** é o número de nós no grafo.
@@ -83,22 +82,21 @@ Analisando o fluxo de controle do algoritmo, obtemos:
 - **P = 1**.
 
 Assim, a complexidade ciclomática é:
-\[
-\text{M} = 8 - 7 + 2(1) = 3
-\]
+M = 8 - 7 + 2(1) = 3
+
 
 ## Complexidade Assintótica
 
 ### Complexidade Temporal
 O algoritmo de Karatsuba segue a relação de recorrência:
-\[
+
 T(n) = 3T(n/2) + O(n)
-\]
+
 
 Aplicando o **Teorema Mestre**, obtemos:
-\[
+
 T(n) = O(n^{\log_2{3}}) \approx O(n^{1.5})
-\]
+
 
 Ou seja, a complexidade temporal é **O(n^1.5)**, tornando-o mais eficiente que a multiplicação tradicional (**O(n^2)**) para números grandes.
 
@@ -110,7 +108,7 @@ Ou seja, a complexidade temporal é **O(n^1.5)**, tornando-o mais eficiente que 
 A memória utilizada pelo algoritmo é dominada pelas chamadas recursivas.
 - A profundidade da recursão é **O(log n)**.
 - Cada chamada usa um espaço **O(1)** para armazenar variáveis locais.
-- Assim, o consumo total de memória é **O(log n)**, o que é significativamente melhor que a abordagem tradicional **O(n^2)**.
+
 
 ---
 
