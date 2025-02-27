@@ -51,5 +51,70 @@ Dado dois numeros `num1` e `num2`, a multiplicacao eh feita da seguinte forma:
  50 x 5 = 250
 ```
 
-Este projeto demonstra como a multiplicacao recursiva de Karatsuba reduz a quantidade de operacoes necessarias para multiplicacao de numeros grandes.
+
+# Análise de Complexidade do Algoritmo de Karatsuba
+
+## Complexidade Ciclomática
+A complexidade ciclomática do algoritmo de Karatsuba pode ser calculada a partir do fluxo de controle da função.
+
+### Grafo de Fluxo de Controle
+O grafo de fluxo é estruturado da seguinte forma:
+1. Início da função.
+2. Verificação do caso base (**if num1 < 10 or num2 < 10**).
+3. Cálculo do tamanho dos números.
+4. Divisão dos números em partes mais e menos significativas.
+5. Três chamadas recursivas (**karatsuba** em partes menores).
+6. Combinação dos resultados.
+7. Retorno do resultado.
+
+### Cálculo de ᵌ
+Utilizando a fórmula:
+\[
+\text{M} = E - N + 2P
+\]
+Onde:
+- **E** é o número de arestas no grafo.
+- **N** é o número de nós no grafo.
+- **P** é o número de componentes conexos
+
+Analisando o fluxo de controle do algoritmo, obtemos:
+- **N = 7** (nós principais do fluxo de decisão e operações).
+- **E = 8** (conexões entre os blocos do código).
+- **P = 1**.
+
+Assim, a complexidade ciclomática é:
+\[
+\text{M} = 8 - 7 + 2(1) = 3
+\]
+
+## Complexidade Assintótica
+
+### Complexidade Temporal
+O algoritmo de Karatsuba segue a relação de recorrência:
+\[
+T(n) = 3T(n/2) + O(n)
+\]
+
+Aplicando o **Teorema Mestre**, obtemos:
+\[
+T(n) = O(n^{\log_2{3}}) \approx O(n^{1.5})
+\]
+
+Ou seja, a complexidade temporal é **O(n^1.5)**, tornando-o mais eficiente que a multiplicação tradicional (**O(n^2)**) para números grandes.
+
+#### Casos:
+- **Melhor caso:** O(n) quando os números são pequenos e caem no caso base rapidamente.
+- **Caso médio e pior caso:** O(n^1.5), pois a recursão sempre ocorre três vezes antes de combinar os resultados.
+
+### Complexidade Espacial
+A memória utilizada pelo algoritmo é dominada pelas chamadas recursivas.
+- A profundidade da recursão é **O(log n)**.
+- Cada chamada usa um espaço **O(1)** para armazenar variáveis locais.
+- Assim, o consumo total de memória é **O(log n)**, o que é significativamente melhor que a abordagem tradicional **O(n^2)**.
+
+---
+
+
+
+
 
