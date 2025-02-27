@@ -67,7 +67,7 @@ O grafo de fluxo é estruturado da seguinte forma:
 6. Combinação dos resultados.
 7. Retorno do resultado.
 
-### Cálculo de ᵌ
+### Cálculo de complexidade
 Utilizando a fórmula:
 \[
 \text{M} = E - N + 2P
